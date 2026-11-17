@@ -48,6 +48,11 @@ function fish_user_key_bindings
     # Alt-l / Ctrl-l: lf (overrides clear-screen on Ctrl-l, same as in bash)
     bind \el 'lf; commandline -f repaint'
     bind \cl 'lf; commandline -f repaint'
+    # Ctrl-e / Alt-e: yazi with cd on exit (only where yazi is installed)
+    if type -q yazi
+        bind \ce 'y; commandline -f repaint'
+        bind \ee 'y; commandline -f repaint'
+    end
 end
 
 # ---- Login banner ----
